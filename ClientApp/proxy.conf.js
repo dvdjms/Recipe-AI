@@ -7,6 +7,7 @@ const PROXY_CONFIG = [
   {
     context: [
       "/weatherforecast",
+      "/api/chatgpt",
    ],
     proxyTimeout: 10000,
     target: target,
