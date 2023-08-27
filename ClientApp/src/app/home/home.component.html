@@ -4,7 +4,16 @@
 <p>Welcome to your recipe generator:</p>
 
 <div id="view-reader">
+
+      
+      <p *ngFor="let response of response">{{ response }}</p>
+
+
 </div>
 
 <input id="ask-question">
 <button id="ask-button">Ask</button>
+<p>{{count}}</p>
+<button (click)="likeAndSubscribe()"></button>
+
+
