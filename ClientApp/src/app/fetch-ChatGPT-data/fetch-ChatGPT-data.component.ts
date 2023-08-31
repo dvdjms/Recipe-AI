@@ -1,16 +1,18 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+// import { FoodService } from './food.service';
 
 
 @Component({
-  selector: 'app-fetch-data',
-  templateUrl: './fetch-ChatGPT-data.component.html'
+  selector: 'app-fetch-ChatGPT-data',
+  templateUrl: './fetch-ChatGPT-data.component.html',
 })
+
 
 export class FetchChatDataComponent {
 
-  public APIResponse: ChatGPTRequestDTO[] = [];
 
+  public APIResponse: ChatGPTRequestDTO[] = [];
   public SearchText = '';
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {

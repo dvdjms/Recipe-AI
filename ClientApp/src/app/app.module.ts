@@ -10,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { FetchChatDataComponent } from './fetch-ChatGPT-data/fetch-ChatGPT-data.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ChatgptContainerComponent } from './chatgpt-container/chatgpt-container.component';
+import { FoodSearchComponent } from './food-search/food-search.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { FetchChatDataComponent } from './fetch-ChatGPT-data/fetch-ChatGPT-data.
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    FetchChatDataComponent
+    FetchChatDataComponent,
+    ChatgptContainerComponent,
+    FoodSearchComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,8 +33,9 @@ import { FetchChatDataComponent } from './fetch-ChatGPT-data/fetch-ChatGPT-data.
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'fetch-chat-data', component: FetchChatDataComponent },
-    ])
+      { path: 'fetch-chat-data', component: ChatgptContainerComponent }
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

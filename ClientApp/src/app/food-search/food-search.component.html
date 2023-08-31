@@ -1,0 +1,15 @@
+
+<br>
+<br>
+<br>
+<form>
+      <input (keydown)="onKeyPressMove($event)" placeholder="Search Food" >
+      <button type="submit">Add</button>
+</form>
+<div *ngFor="let food of foods">
+
+      <li  class="food-item" (submit)="onClick" value="{{ food.FOOD_NAME }}">{{ food.FOOD_NAME }}<li>
+
+</div>
+
+

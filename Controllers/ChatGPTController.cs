@@ -7,7 +7,6 @@ namespace ChatGPT.Controllers
 {
       [ApiController]
       [Route("api/[controller]")]
-      // [Route("api/chatgpt")]
 
       public class ChatGPTController : ControllerBase
       {     
@@ -35,10 +34,7 @@ namespace ChatGPT.Controllers
                   };
 
                   var result = await openai.Completions.CreateCompletionAsync(completion);
-                  // foreach (var item in result.Completions)
-                  // {
-                  //       answer += item.Text;
-                  // }
+
                   string answer = string.Join("", result.Completions.Select(item => item.Text));
 
                   var responseObject = new
