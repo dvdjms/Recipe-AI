@@ -1,14 +1,26 @@
 
-<br>
-<br>
-<br>
-<form>
-      <input (keydown)="onKeyPressMove($event)" placeholder="Search Food" >
-      <button type="submit">Add</button>
-</form>
-<div *ngFor="let food of foods">
 
-      <li  class="food-item" (submit)="onClick" value="{{ food.FOOD_NAME }}">{{ food.FOOD_NAME }}<li>
+<br>
+<div id="container-search-food">
+      <div>
+            <input id="food-input" (keydown)="onKeyPressMove($event)" placeholder="Search Food" >
+            <button type="submit">Add</button>
+      </div>
+      <div id="container-list-display" *ngFor="let food of foods">
+            <ul id="unordered-list-for-selection">
+                  <li  id="food-list-item" (click)="addFoodItem(food.ID)" class="food-item" value="{{ food.FOOD_NAME }}">{{ food.FOOD_NAME }}</li>
+            </ul>
+      </div> 
+
+</div>
+<div id="container-selected-food">
+      <h6>Selected food:</h6>
+
+      <div *ngFor="let food of selectedFood">
+            <ul id="unordered-list-selected">
+                  <li id="selected-food-item-list"><p id="selected-item-paragraph">{{ food }}</p><span (click)="removeFoodItem(food)" id="cancel-food-button">&#x2715;</span></li>
+            </ul>
+      </div>
 
 </div>
 

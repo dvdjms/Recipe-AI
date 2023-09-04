@@ -17,6 +17,7 @@ export class FoodSearchComponent {
   }
 
   foods: any[] = [];
+  selectedFood: any[] = [];
   searchContext = ''; 
 
   // ngOnInit() {
@@ -28,7 +29,7 @@ export class FoodSearchComponent {
     this.foodService.getInfo().subscribe(data => {
       this.foods = data
       .filter(food => food.FOOD_NAME.trim().toLowerCase().startsWith(startingLetters))
-      .slice(0, 5);
+      .slice(0, 10);
 
       if (startingLetters === '') {
         this.foods = [];
@@ -54,9 +55,21 @@ export class FoodSearchComponent {
   }
 
 
-  onClick() {
-
+  addFoodItem(foodId: string) {
+    for(let i = 0; i < this.foods.length; i++){
+      if (foodId === this.foods[i].ID){
+        this.selectedFood.push(this.foods[i].FOOD_NAME)
+      }
+    }
   }
+
+  removeFoodItem(food: string){
+    // Make an array object - food item number needed!
+
+    console.log(food)
+  }
+
+
 }
 
 
