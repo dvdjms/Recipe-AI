@@ -16,11 +16,12 @@
 <div id="container-selected-food">
       <h6>Selected food:</h6>
 
-      <div *ngFor="let food of selectedFood">
+      <div *ngFor="let food of selectedFood; let i = index">
             <ul id="unordered-list-selected">
-                  <li id="selected-food-item-list"><p id="selected-item-paragraph">{{ food }}</p><span (click)="removeFoodItem(food)" id="cancel-food-button">&#x2715;</span></li>
+                  <li id="selected-food-item-list"><p id="selected-item-paragraph">{{ food }}</p><span (click)="removeFoodItem(i)" id="cancel-food-button">&#x2715;</span></li>
             </ul>
       </div>
+      <button id="clear-all-food-button" (click)="removeAllFood()">Clear all</button>
 
 </div>
 

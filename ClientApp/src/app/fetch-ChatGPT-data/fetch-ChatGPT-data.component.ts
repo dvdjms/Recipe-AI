@@ -11,13 +11,12 @@ import { HttpClient } from '@angular/common/http';
 
 export class FetchChatDataComponent {
 
-
-  public APIResponse: ChatGPTRequestDTO[] = [];
+  public APIResponse: string = '';
   public SearchText = '';
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.get<ChatGPTRequestDTO[]>(baseUrl + 'api/chatgpt').subscribe(result => {
-      this.APIResponse = result;
+      this.APIResponse += result;
     }, error => console.error(error));
   }
 
@@ -33,6 +32,12 @@ export class FetchChatDataComponent {
     this.APIResponse = response.answer;
     }, error => console.error(error));
   }
+
+  public formatResponse(response: string): string {
+    return response.replace(/\n/g, '<br>');
+  }
+
+
 }
 
 

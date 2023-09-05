@@ -16,10 +16,12 @@
 <h6>Output</h6>
 
 <div id="output">
-<div id="output" >
-  <p id="response">{{ APIResponse }}</p>
+  <div *ngIf="APIResponse">
+    <div [innerHTML]="formatResponse(APIResponse)"></div>
+  </div>
 </div>
-</div>
+
+I have ingredients and want a recipe. Potatoes, beans, cheese.
 
 <style>
   h6 {

@@ -18,7 +18,7 @@ export class FoodSearchComponent {
 
   foods: any[] = [];
   selectedFood: any[] = [];
-  searchContext = ''; 
+  searchContext = '';   
 
   // ngOnInit() {
   //   this.getData('');
@@ -63,14 +63,17 @@ export class FoodSearchComponent {
     }
   }
 
-  removeFoodItem(food: string){
-    // Make an array object - food item number needed!
+  
+  removeFoodItem(index: number) {
+    console.log('index number', index)
+    this.selectedFood.splice(index, 1);
+  }
 
-    console.log(food)
+  removeAllFood() {
+    this.selectedFood = []
   }
 
 
 }
-
 
 
