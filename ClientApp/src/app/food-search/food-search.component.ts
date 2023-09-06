@@ -18,10 +18,11 @@ export class FoodSearchComponent {
 
   foods: any[] = [];
   selectedFood: any[] = [];
-  searchContext = '';   
+  searchContext = '';  
+  ingredients = ''; 
 
   // ngOnInit() {
-  //   this.getData('');
+  //   console.log('I want a recipe with the following ingredients: ')
   // }
 
   getData(startingLetters: string) {
@@ -63,14 +64,19 @@ export class FoodSearchComponent {
     }
   }
 
-  
   removeFoodItem(index: number) {
-    console.log('index number', index)
     this.selectedFood.splice(index, 1);
   }
 
   removeAllFood() {
     this.selectedFood = []
+  }
+
+  onSubmitIngredients() {
+    for(let i = 0; i < this.selectedFood.length; i++){
+      this.ingredients += ', ' + this.selectedFood[i];
+    }
+    console.log(`I want a recipe with the following ingredients${this.ingredients}.`);
   }
 
 

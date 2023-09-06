@@ -8,19 +8,34 @@
       </div>
       <div id="container-list-display" *ngFor="let food of foods">
             <ul id="unordered-list-for-selection">
-                  <li  id="food-list-item" (click)="addFoodItem(food.ID)" class="food-item" value="{{ food.FOOD_NAME }}">{{ food.FOOD_NAME }}</li>
+                  <li  id="food-list-item" 
+                        (click)="addFoodItem(food.ID)" 
+                        value="{{ food.FOOD_NAME }}">
+                        {{ food.FOOD_NAME }}
+                  </li>
             </ul>
       </div> 
 
 </div>
 <div id="container-selected-food">
-      <h6>Selected food:</h6>
-
-      <div *ngFor="let food of selectedFood; let i = index">
-            <ul id="unordered-list-selected">
-                  <li id="selected-food-item-list"><p id="selected-item-paragraph">{{ food }}</p><span (click)="removeFoodItem(i)" id="cancel-food-button">&#x2715;</span></li>
-            </ul>
+      <div id="selected-food-header">
+            <h6 id="selected-food-title">Selected food:</h6>
+            <button id="submit-food-button" (click)="onSubmitIngredients()">Submit</button>
       </div>
+      <div id="selected-food-body">
+            <div  *ngFor="let food of selectedFood; let i = index">
+                  <ul id="unordered-list-selected">
+                        <li id="selected-food-item-list">
+                              <p id="selected-item-paragraph">{{ food }}</p>
+                              <span (click)="removeFoodItem(i)" 
+                                    id="cancel-food-button">
+                                    &#x2715;
+                              </span>
+                        </li>
+                  </ul>
+            </div>
+      </div>
+
       <button id="clear-all-food-button" (click)="removeAllFood()">Clear all</button>
 
 </div>

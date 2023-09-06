@@ -1,5 +1,3 @@
-
-
 <br>
 <br>
 <!-- <p *ngIf="!APIResponse?.length"><em>Loading...</em></p> -->
@@ -15,24 +13,12 @@
 <br>
 <h6>Output</h6>
 
-<div id="output">
-  <div *ngIf="APIResponse">
-    <div [innerHTML]="formatResponse(APIResponse)"></div>
+  <div id="output">
+    <div *ngIf="APIResponse">
+      <div [innerHTML]="formatResponse(APIResponse)"></div>
+    </div>
+    
   </div>
-</div>
+  <footer id="footer"></footer>
 
-I have ingredients and want a recipe. Potatoes, beans, cheese.
-
-<style>
-  h6 {
-    color:red;
-  }
-  #output {
-    background-color: azure;
-    height: 50px;
-    width: 100%;
-    border-color: blue;
-    border-style: double;
-  }
-</style>
 

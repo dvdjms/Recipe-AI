@@ -45,45 +45,62 @@
       float: left;
       position: relative;
       width: 50%;
-
 }
-
 
 #selected-food-item-list {
       border: black solid .5px;
       border-radius: 7px;
       height: 22px;
       width: fit-content;
-      padding: 0 9px 0 7px;
-
+      padding: 0 7px 0 7px;
 }
 
 #selected-item-paragraph {
       float: left;
       font-size: 14px;
-      padding-right: 5px;
+      padding-right: 4px;
       margin: 0;
-
 }
 
 #cancel-food-button {
       height: 20px;
       float: right;
-      font-size: 13px;
+      font-size: 12px;
       border-left: black solid .5px;
       margin-left: 7px;
-      padding: 1px 1px 0 7px;
+      padding: 2px 0px 0 5px;
       cursor: pointer;
 }
 
 #unordered-list-selected {
       list-style: none;
-      margin: 3px;
+      margin: 5px;
+}
+
+#submit-food-button {
+      float: right;
 }
 
 #clear-all-food-button {
+      cursor: pointer;
+      background: none;
+      border: none;
+      bottom: 0;
+      font-size: 13px;
       position: absolute;
       right: 0;
-      bottom: 0;
+      margin: 0 5px 5px 0;
+}
 
+#selected-food-header {
+      width: 100%;
+}
+
+#selected-food-body {
+      margin-top: 30px;
+}
+
+#selected-food-title {
+      float: left;
+      width: 80%;
 }

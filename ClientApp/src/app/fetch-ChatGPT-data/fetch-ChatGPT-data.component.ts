@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-fetch-ChatGPT-data',
   templateUrl: './fetch-ChatGPT-data.component.html',
+  styleUrls: ['./fetch-ChatGPT-data.component.css'],
 })
 
 
@@ -36,6 +37,15 @@ export class FetchChatDataComponent {
   public formatResponse(response: string): string {
     return response.replace(/\n/g, '<br>');
   }
+  displayStyle = "none";
+  
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
+  }
+
 
 
 }
