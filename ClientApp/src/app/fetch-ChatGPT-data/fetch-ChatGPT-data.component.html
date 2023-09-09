@@ -1,9 +1,5 @@
 <br>
 <br>
-<!-- <p *ngIf="!APIResponse?.length"><em>Loading...</em></p> -->
-<!-- <my-child></my-child> -->
-
-<br>
 
 <form (submit)="onSubmit()">
   <h5>Insert ingredients</h5>
@@ -13,12 +9,22 @@
 <br>
 <h6>Output</h6>
 
-  <div id="output">
-    <div *ngIf="APIResponse">
-      <div [innerHTML]="formatResponse(APIResponse)"></div>
-    </div>
-    
+<div id="output">
+  <button>Display modal</button>
+  <div *ngIf="APIResponse">
+    <div [innerHTML]="formatResponse(APIResponse)"></div>
   </div>
-  <footer id="footer"></footer>
+  
+</div>
+<footer id="footer"></footer>
+
+
+
+
+
+
+
+
+
 
 

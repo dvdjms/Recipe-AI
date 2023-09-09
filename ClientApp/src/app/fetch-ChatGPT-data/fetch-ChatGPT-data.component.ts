@@ -1,6 +1,5 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { FoodService } from './food.service';
 
 
 @Component({
@@ -19,7 +18,9 @@ export class FetchChatDataComponent {
     http.get<ChatGPTRequestDTO[]>(baseUrl + 'api/chatgpt').subscribe(result => {
       this.APIResponse += result;
     }, error => console.error(error));
+
   }
+  bodyText = 'This text can be updated in modal 1';
 
 
   onSubmit() {
@@ -37,16 +38,6 @@ export class FetchChatDataComponent {
   public formatResponse(response: string): string {
     return response.replace(/\n/g, '<br>');
   }
-  displayStyle = "none";
-  
-  openPopup() {
-    this.displayStyle = "block";
-  }
-  closePopup() {
-    this.displayStyle = "none";
-  }
-
-
 
 }
 
