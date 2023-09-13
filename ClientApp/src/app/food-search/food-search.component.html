@@ -1,9 +1,12 @@
 
 
 <br>
-<div id="container-search-food">
+<div #container id="container-search-food">
       <div>
-            <input id="food-input" (keydown)="onKeyPressMove($event)" placeholder="Search Food" >
+            <input [(ngModel)]="searchField" 
+                  id="food-input" 
+                  (input)="onInputChange()"
+                  placeholder="Search Food">
             <button type="submit">Add</button>
       </div>
       <div id="container-list-display" *ngFor="let food of foods">

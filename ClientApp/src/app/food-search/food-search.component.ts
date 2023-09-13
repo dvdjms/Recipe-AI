@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { FoodService } from '../food-search/food.service';
 
 @Component({
   selector: 'app-food-search',
   templateUrl: './food-search.component.html',
   styleUrls: ['./food-search.component.css'],
-  providers: [FoodService],
-  template: '<h1>Hello World!</h1>'
+  providers: [FoodService]
 })
 
 
 export class FoodSearchComponent {
+  static onSubmitIngredients: any;
 
   constructor( private foodService:FoodService) {
    
@@ -18,12 +18,9 @@ export class FoodSearchComponent {
 
   foods: any[] = [];
   selectedFood: any[] = [];
-  searchContext = '';  
+  searchField = '';  
   ingredients = ''; 
 
-  // ngOnInit() {
-  //   console.log('I want a recipe with the following ingredients: ')
-  // }
 
   getData(startingLetters: string) {
     console.log(startingLetters)
@@ -39,22 +36,9 @@ export class FoodSearchComponent {
   }
 
 
-  onKeyPressMove(event: KeyboardEvent) {
-    const pressedKey = event.key.toLowerCase();
-
-    if ((event.keyCode < 65 || event.keyCode > 90) && event.keyCode !== 8) {
-      event.preventDefault();
-    }
-    else if (pressedKey.length > 1) {
-      this.searchContext = this.searchContext.slice(pressedKey.length - pressedKey.length, -1);
-    }
-    else {
-      this.searchContext += pressedKey;
-    }
-    this.getData(this.searchContext);
-
+  onInputChange() {
+    this.getData(this.searchField)
   }
-
 
   addFoodItem(foodId: string) {
     for(let i = 0; i < this.foods.length; i++){
@@ -77,6 +61,15 @@ export class FoodSearchComponent {
       this.ingredients += ', ' + this.selectedFood[i];
     }
     console.log(`I want a recipe with the following ingredients${this.ingredients}.`);
+  }
+
+  @ViewChild('container') container!: ElementRef;
+  @HostListener('document:click', ['$event'])
+  onClick(event: Event) {
+    if (!this.container.nativeElement.contains(event.target)) {
+      this.searchField = '';
+      this.foods = [];
+    }
   }
 
 

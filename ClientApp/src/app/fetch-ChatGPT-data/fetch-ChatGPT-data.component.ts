@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { FoodSearchComponent } from '../food-search/food-search.component';
 
 @Component({
   selector: 'app-fetch-ChatGPT-data',
@@ -25,7 +25,7 @@ export class FetchChatDataComponent {
 
   onSubmit() {
     const requestPayload = {
-      SearchText: this.SearchText // Include user input in the request
+      SearchText: this.SearchText
     };
     console.log(requestPayload.SearchText)
 

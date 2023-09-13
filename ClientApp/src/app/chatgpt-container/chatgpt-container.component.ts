@@ -5,4 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './chatgpt-container.component.html',
   styleUrls: ['./chatgpt-container.component.css'] 
 })
+
 export class ChatgptContainerComponent {}
