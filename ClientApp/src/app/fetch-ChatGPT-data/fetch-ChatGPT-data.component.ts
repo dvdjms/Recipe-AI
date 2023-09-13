@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FoodSearchComponent } from '../food-search/food-search.component';
-import {MatDialogRef} from '@angular/material/dialog';
+// import { FoodSearchComponent } from '../food-search/food-search.component';
+// import {MatDialogRef} from '@angular/material/dialog';
 
 
 @Component({
