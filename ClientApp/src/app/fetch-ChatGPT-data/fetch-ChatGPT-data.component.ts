@@ -1,6 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FoodSearchComponent } from '../food-search/food-search.component';
+import {MatDialogRef} from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-fetch-ChatGPT-data',
@@ -13,6 +15,7 @@ export class FetchChatDataComponent {
 
   public APIResponse: string = '';
   public SearchText = '';
+
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.get<ChatGPTRequestDTO[]>(baseUrl + 'api/chatgpt').subscribe(result => {
@@ -38,6 +41,10 @@ export class FetchChatDataComponent {
   public formatResponse(response: string): string {
     return response.replace(/\n/g, '<br>');
   }
+
+  
+
+
 
 }
 
