@@ -12,6 +12,8 @@ import { FetchChatDataComponent } from './fetch-ChatGPT-data/fetch-ChatGPT-data.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatgptContainerComponent } from './chatgpt-container/chatgpt-container.component';
 import { FoodSearchComponent } from './food-search/food-search.component';
+import { NgbModalComponent } from './modal/modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { FoodSearchComponent } from './food-search/food-search.component';
     FetchChatDataComponent,
     ChatgptContainerComponent,
     FoodSearchComponent,
+    NgbModalComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,7 +35,8 @@ import { FoodSearchComponent } from './food-search/food-search.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'fetch-chat-data', component: ChatgptContainerComponent }
     ]),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

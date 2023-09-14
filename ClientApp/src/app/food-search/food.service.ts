@@ -2,23 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 
-// @Injectable({
-//       providedIn: 'root'
-//     })
-
-
-// export class FoodService {
-
-//       genericFood = ('assets/generic_food.csv');
-
-//       constructor(private http: HttpClient) {}
-
-//       getInfo() {
-//             console.log('this', this.genericFood)
-//             return this.http.get(this.genericFood, {responseType: 'text'})
-//       }
-// }
-
 
 @Injectable({
       providedIn: 'root'
