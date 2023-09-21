@@ -1,5 +1,9 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, Input, Inject } from '@angular/core';
 import { FoodService } from '../food-search/food.service';
+import { SharedService } from '../shared-Service/shared.service';
+
+
+
 
 @Component({
   selector: 'app-food-search',
@@ -10,16 +14,14 @@ import { FoodService } from '../food-search/food.service';
 
 
 export class FoodSearchComponent {
-  static onSubmitIngredients: any;
 
-  constructor( private foodService:FoodService) {
-   
-  }
+
+  constructor( private foodService: FoodService, private sharedService: SharedService) {}
 
   foods: any[] = [];
   selectedFood: any[] = [];
   searchField = '';  
-  ingredients = ''; 
+  ingredients = '';
 
 
   getData(startingLetters: string) {
@@ -40,12 +42,14 @@ export class FoodSearchComponent {
     this.getData(this.searchField)
   }
 
+  
   addFoodItem(foodId: string) {
     for(let i = 0; i < this.foods.length; i++){
       if (foodId === this.foods[i].ID){
         this.selectedFood.push(this.foods[i].FOOD_NAME)
       }
     }
+    this.sharedService.updateSelectedFood(this.selectedFood)
   }
 
   removeFoodItem(index: number) {
@@ -56,13 +60,6 @@ export class FoodSearchComponent {
     this.selectedFood = []
   }
 
-  onSubmitIngredients() {
-    for(let i = 0; i < this.selectedFood.length; i++){
-      this.ingredients += ', ' + this.selectedFood[i];
-    }
-    console.log(`I want a recipe with the following ingredients${this.ingredients}.`);
-  }
-
   @ViewChild('container') container!: ElementRef;
   @HostListener('document:click', ['$event'])
   onClick(event: Event) {
@@ -71,6 +68,7 @@ export class FoodSearchComponent {
       this.foods = [];
     }
   }
+
 
 
 }

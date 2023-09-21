@@ -12,8 +12,11 @@ import { FetchChatDataComponent } from './fetch-ChatGPT-data/fetch-ChatGPT-data.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatgptContainerComponent } from './chatgpt-container/chatgpt-container.component';
 import { FoodSearchComponent } from './food-search/food-search.component';
-import { NgbModalComponent } from './modal/modal.component';
+import { ModalComponent } from './modal/modal.component';
+import { NgbdModalContent } from './modal-content/model-content.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedService } from './shared-Service/shared.service';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FetchChatDataComponent,
     ChatgptContainerComponent,
     FoodSearchComponent,
-    NgbModalComponent,
+    NgbdModalContent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -38,7 +42,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     NgbModule,
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
