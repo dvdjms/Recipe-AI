@@ -1,23 +1,37 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { SharedService } from '../shared-Service/shared.service';
+import { SharedService } from '../services/shared.service';
+import { FetchService } from '../services/fetch.service';
+
 
 @Component({
 	selector: 'app-modal',
 	templateUrl: './modal.component.html',
 	styleUrls: ['./modal.component.css'],
-	providers: [],
 })
 
 export class ModalComponent{
-
-	constructor(private modalService: NgbModal, private sharedService: SharedService) {}
+	recipeData: any;
+	constructor(private modalService: NgbModal, private sharedService: SharedService, private fetchService: FetchService) {}
 
 	openScrollableContent(longContent: any) {
-		const ingredients = this.sharedService.onFetchRecipe();
-		console.log('this empty array ', ingredients);
-
-		this.modalService.open(longContent, { scrollable: true });
+		this.sharedService.onFetchRecipe();
+		this.fetchService.fetchRecipe().subscribe(
+			(data) => {
+			  	this.recipeData = data;
+				this.modalService.open(longContent, { scrollable: true });
+			},
+			(error) => {
+			  console.error('Error fetching recipe:', error);
+			}
+		);
+		// this.modalService.open(longContent, { scrollable: true });
 	}
+
+
+	public formatResponse(response: string): string {
+		return response.replace(/\n/g, '<br>');
+	}
+
 }
 

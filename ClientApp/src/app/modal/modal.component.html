@@ -1,11 +1,30 @@
+
+
 <section>
+
+		
+
+
+
+
+
 <ng-template #content let-modal>
+
+
 	<div class="modal-header">
 		<h4 class="modal-title" id="modal-basic-title">Your requested recipe</h4>
 		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 	</div>
 	<div class="modal-body">
+
+		<h2>Recipe Details</h2>
+		<div *ngIf="recipeData">
+			<div [innerHTML]="formatResponse(recipeData.answer)"></div>
+		</div>
+		<h2>End here</h2>
+
 		<div class="mb-3"><br>
+			<strong>HARD CODED FOR TESTING</strong>
 			Pacific Cod & Orange Fennel Salad
 			<br><br>
 		Ingredients:
@@ -43,6 +62,8 @@
 		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
 	</div>
 </ng-template>
+
+
 
 <button id="fetch-button" class="btn btn-lg btn-outline-primary" (click)="openScrollableContent(content)">Fetch Recipe</button>
 </section>

@@ -1,8 +1,6 @@
 import { Component, ElementRef, HostListener, ViewChild, Input, Inject } from '@angular/core';
 import { FoodService } from '../food-search/food.service';
-import { SharedService } from '../shared-Service/shared.service';
-
-
+import { SharedService } from '../services/shared.service';
 
 
 @Component({
@@ -12,9 +10,7 @@ import { SharedService } from '../shared-Service/shared.service';
   providers: [FoodService]
 })
 
-
 export class FoodSearchComponent {
-
 
   constructor( private foodService: FoodService, private sharedService: SharedService) {}
 
@@ -22,7 +18,6 @@ export class FoodSearchComponent {
   selectedFood: any[] = [];
   searchField = '';  
   ingredients = '';
-
 
   getData(startingLetters: string) {
     console.log(startingLetters)
@@ -37,12 +32,10 @@ export class FoodSearchComponent {
     });
   }
 
-
   onInputChange() {
     this.getData(this.searchField)
   }
 
-  
   addFoodItem(foodId: string) {
     for(let i = 0; i < this.foods.length; i++){
       if (foodId === this.foods[i].ID){
@@ -68,8 +61,6 @@ export class FoodSearchComponent {
       this.foods = [];
     }
   }
-
-
 
 }
 

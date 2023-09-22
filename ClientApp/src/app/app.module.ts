@@ -15,7 +15,8 @@ import { FoodSearchComponent } from './food-search/food-search.component';
 import { ModalComponent } from './modal/modal.component';
 import { NgbdModalContent } from './modal-content/model-content.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SharedService } from './shared-Service/shared.service';
+import { SharedService } from './services/shared.service';
+import { FetchService } from './services/fetch.service';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { SharedService } from './shared-Service/shared.service';
     BrowserAnimationsModule,
     NgbModule,
   ],
-  providers: [SharedService],
+  providers: [SharedService, FetchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
