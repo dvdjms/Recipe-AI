@@ -12,20 +12,31 @@ import { FetchService } from '../services/fetch.service';
 
 export class ModalComponent{
 	recipeData: any;
+	public isButtonVisible = true;
+	public isLoaderVisible = false;
+
 	constructor(private modalService: NgbModal, private sharedService: SharedService, private fetchService: FetchService) {}
 
 	openScrollableContent(longContent: any) {
-		// this.sharedService.onFetchRecipe();
-		// this.fetchService.fetchRecipe().subscribe(
-		// 	(data) => {
-		// 	  	this.recipeData = data;
-		// 		this.modalService.open(longContent, { scrollable: true });
-		// 	},
-		// 	(error) => {
-		// 	  console.error('Error fetching recipe:', error);
-		// 	}
-		// );
-		this.modalService.open(longContent, { scrollable: true });
+
+		this.isButtonVisible = false;
+		this.isLoaderVisible = true;
+
+		setTimeout(() => {
+			// this.sharedService.onFetchRecipe();
+			// this.fetchService.fetchRecipe().subscribe(
+			// 	(data) => {
+			// 	  	this.recipeData = data;
+			// 		this.modalService.open(longContent, { scrollable: true });
+			// 	},
+			// 	(error) => {
+			// 	  console.error('Error fetching recipe:', error);
+			// 	}
+			// );
+			this.modalService.open(longContent, { scrollable: true });
+			this.isButtonVisible = true;
+			this.isLoaderVisible = false;
+		}, 1000);
 	}
 
 

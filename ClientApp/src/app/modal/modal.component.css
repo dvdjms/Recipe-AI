@@ -4,12 +4,18 @@ section {
       position: relative;
 }
 
-.modal-container {
-      background-color: #cbffcd;
 
+#generate-button {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 300px;
 }
 
-#fetch-button {
+#loading-button {
       margin: 0;
       position: absolute;
       top: 50%;
@@ -27,16 +33,13 @@ section {
       z-index: 2;
 }
 
-
 .modal-header {
       border: none;
 }
 
-
-
 .modal-body {
       color: #fde6fa;
-      font-size: 16px;
+      font-size: 14px;
       font-family:Verdana, Tahoma, sans-serif;
       background-color: #6b2a60;
       position: relative;
@@ -47,9 +50,7 @@ section {
 
 .modal-footer {
       border: none;
-      /* z-index: 0; */
 }
-
 
 .custom-shape-divider-top-1695642016 {
       position: absolute;
@@ -60,7 +61,6 @@ section {
       line-height: 0;
       z-index: 1;
   }
-  
   .custom-shape-divider-top-1695642016 svg {
       background-color: #6b2a60;
       position: relative;
@@ -69,7 +69,6 @@ section {
       height: 96px;
       z-index: 1;
   }
-  
   .custom-shape-divider-top-1695642016 .shape-fill {
       fill: #f59393;
       z-index: 1;
@@ -86,7 +85,6 @@ section {
       transform: rotate(180deg);
       z-index: 1;
   }
-  
   .custom-shape-divider-bottom-1695641915 svg {
       background-color: #6b2a60;
       position: relative;
@@ -95,7 +93,6 @@ section {
       height: 96px;
       z-index: 1;
   }
-  
   .custom-shape-divider-bottom-1695641915 .shape-fill {
       fill: #f17f7f;
       z-index: 1;
