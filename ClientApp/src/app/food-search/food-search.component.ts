@@ -1,5 +1,5 @@
-import { Component, ElementRef, HostListener, ViewChild, Input, Inject } from '@angular/core';
-import { FoodService } from '../food-search/food.service';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { FoodService } from '../services/food.service';
 import { SharedService } from '../services/shared.service';
 
 

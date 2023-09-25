@@ -15,17 +15,17 @@ export class ModalComponent{
 	constructor(private modalService: NgbModal, private sharedService: SharedService, private fetchService: FetchService) {}
 
 	openScrollableContent(longContent: any) {
-		this.sharedService.onFetchRecipe();
-		this.fetchService.fetchRecipe().subscribe(
-			(data) => {
-			  	this.recipeData = data;
-				this.modalService.open(longContent, { scrollable: true });
-			},
-			(error) => {
-			  console.error('Error fetching recipe:', error);
-			}
-		);
-		// this.modalService.open(longContent, { scrollable: true });
+		// this.sharedService.onFetchRecipe();
+		// this.fetchService.fetchRecipe().subscribe(
+		// 	(data) => {
+		// 	  	this.recipeData = data;
+		// 		this.modalService.open(longContent, { scrollable: true });
+		// 	},
+		// 	(error) => {
+		// 	  console.error('Error fetching recipe:', error);
+		// 	}
+		// );
+		this.modalService.open(longContent, { scrollable: true });
 	}
 
 
