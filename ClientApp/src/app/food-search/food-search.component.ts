@@ -24,7 +24,7 @@ export class FoodSearchComponent {
     this.foodService.getInfo().subscribe(data => {
       this.foods = data
       .filter(food => food.FOOD_NAME.trim().toLowerCase().startsWith(startingLetters))
-      .slice(0, 10);
+      .slice(0, 7);
 
       if (startingLetters === '') {
         this.foods = [];

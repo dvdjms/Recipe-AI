@@ -7,8 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { FetchChatDataComponent } from './fetch-ChatGPT-data/fetch-ChatGPT-data.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatgptContainerComponent } from './chatgpt-container/chatgpt-container.component';
 import { FoodSearchComponent } from './food-search/food-search.component';
@@ -24,8 +22,6 @@ import { FetchService } from './services/fetch.service';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    FetchDataComponent,
-    FetchChatDataComponent,
     ChatgptContainerComponent,
     FoodSearchComponent,
     NgbdModalContent,
@@ -37,8 +33,7 @@ import { FetchService } from './services/fetch.service';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'fetch-chat-data', component: ChatgptContainerComponent }
+      { path: 'recipe', component: ChatgptContainerComponent }
     ]),
     BrowserAnimationsModule,
     NgbModule,
