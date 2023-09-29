@@ -3,7 +3,7 @@
 
       <div id="selected-food-body">
             <!-- <H5>Ingredients:</H5> -->
-            <div  *ngFor="let food of selectedFood; let i = index">
+            <div *ngFor="let food of selectedFood; let i = index">
                   <ul id="unordered-list-selected">
                         <li id="selected-food-item-list">
                               <p id="selected-item-paragraph">{{ food }}</p>
@@ -15,33 +15,33 @@
                   </ul>
             </div>
       </div>
-
-      <button id="clear-all-food-button" (click)="removeAllFood()">Clear all</button>
-
 </div>
+      <button *ngIf="selectedFood.length > 1" id="clear-all-food-button" (click)="removeAllFood()">Clear all</button>
+<div id="container-search-food">
 
 
-
-
-<div #container id="container-search-food">
-      <div id="container-search-outer">
+      <div #container id="container-search-outer">
             <div id="container-search-inner">
-                  <input [(ngModel)]="searchField" 
+                  <input #inputfocus [(ngModel)]="searchField" 
                         id="food-input" 
                         (input)="onInputChange()"
+                        (focus)="onFocus()"
                         placeholder="Search Ingredients">
                   <!-- <button type="submit">Add</button> -->
             </div>
+      <div #blockElement id="container-list-display-outer" >
             <div id="container-list-display" *ngFor="let food of foods">
-                  <ul id="unordered-list-for-selection">
-                        <li  id="food-list-item" 
-                              (click)="addFoodItem(food.ID)" 
+                  <ul id="unordered-list-for-selection" >
+                        <li  id="food-list-item"
+                              (mousedown)="triggerFocus($event)"
+                              (click)="addFoodItem(food.ID)"
                               value="{{ food.FOOD_NAME }}">
                               {{ food.FOOD_NAME }}
                         </li>
                   </ul>
             </div> 
       </div>
+</div>
 </div>
 
 
