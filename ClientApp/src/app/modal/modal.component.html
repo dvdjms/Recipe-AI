@@ -25,12 +25,13 @@
 	</div>
 
 	<div class="modal-body">
-		<h4>Start here</h4>
 		<div *ngIf="recipeData">
 			<div [innerHTML]="formatResponse(recipeData.answer)"></div>
 		</div>
-		<h4>End here</h4>
-		<div class="mb-3"><br>
+		<!-- <div class="mb-3">
+			
+			<br>
+
 			<strong>HARD CODED FOR TESTING</strong><br>
 			Pacific Cod & Orange Fennel Salad
 			<br><br>
@@ -63,7 +64,7 @@
 		<br><br>
 		7. When the cod is cooked through, divide among four plates and top with the orange fennel salad. Serve immediately.
 		<br><br>
-		</div>
+		</div> -->
 		
 	</div>
 
@@ -73,8 +74,6 @@
 
 
 </ng-template>
-
-
 
 
 <button *ngIf="this.isButtonVisible" 
@@ -93,7 +92,7 @@
 		role="status"
 		aria-hidden="true">
 	</span>
-	Loading...
+	Recipe loading...
 </button>
 
 </section>

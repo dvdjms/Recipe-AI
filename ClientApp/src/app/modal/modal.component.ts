@@ -22,23 +22,19 @@ export class ModalComponent{
 		this.isButtonVisible = false;
 		this.isLoaderVisible = true;
 
-		setTimeout(() => {
-			// this.sharedService.onFetchRecipe();
-			// this.fetchService.fetchRecipe().subscribe(
-			// 	(data) => {
-			// 	  	this.recipeData = data;
-			// 		this.modalService.open(longContent, { scrollable: true });
-			// 	},
-			// 	(error) => {
-			// 	  console.error('Error fetching recipe:', error);
-			// 	}
-			// );
-			this.modalService.open(longContent, { scrollable: true });
-			this.isButtonVisible = true;
-			this.isLoaderVisible = false;
-		}, 1000);
+		this.fetchService.fetchRecipe().subscribe(
+			(data) => {
+				this.recipeData = data;
+				this.isButtonVisible = true;
+				this.modalService.open(longContent, { scrollable: true });
+				this.isLoaderVisible = false;
+			},
+			(error) => {
+				console.error('Error fetching recipe:', error);
+			}
+		);
+		this.sharedService.clearSentence();
 	}
-
 
 	public formatResponse(response: string): string {
 		return response.replace(/\n/g, '<br>');

@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable()
 export class SharedService {
 
-  private selectedIngredients: string[] = [];
+  public selectedIngredients: string[] = [];
   private dataSource$$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([])
   selectedFood$: Observable<string[]> = this.dataSource$$.asObservable();
   foodSentence = '';
@@ -23,6 +23,10 @@ export class SharedService {
     }
     var sentence = `I want a recipe with the following ingredients${this.foodSentence}.`;
     return sentence;
+  }
+
+  clearSentence() {
+    this.foodSentence = '';
   }
 
 }

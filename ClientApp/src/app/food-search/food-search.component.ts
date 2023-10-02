@@ -20,7 +20,6 @@ export class FoodSearchComponent {
   ingredients = '';
 
   getData(startingLetters: string) {
-    console.log(startingLetters)
     this.foodService.getInfo().subscribe(data => {
       this.foods = data
       .filter(food => food.FOOD_NAME.trim().toLowerCase().startsWith(startingLetters))

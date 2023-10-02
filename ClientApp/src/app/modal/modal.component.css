@@ -66,6 +66,7 @@ section {
 
 .modal-header {
       border: none;
+      margin-bottom: 0;
 }
 
 .modal-body {
@@ -75,7 +76,7 @@ section {
       background-color: #6b2a60;
       position: relative;
       border: #6b2a60 solid 20px;
-      padding: 20px;
+      padding: 0 20px 20px 20px;
       z-index: 0;
 }
 
