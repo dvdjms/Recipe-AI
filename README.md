@@ -10,9 +10,7 @@ A full-stack ASP.net app with Angular frontend that allows users to select food 
 * [Ideas](#idea)
 * [Showcase](#showcase)
 * [Technologies](#technologies)
-* [Brief](#brief)
-* [Challenges](#challenges)
-* [Running a Learn Scotland demonstration](#running-a-learn-scotland-demonstration)
+* [Running a Recipe AI demonstration](#running-a-learn-scotland-demonstration)
 
 
 <br>
@@ -27,7 +25,9 @@ This endeavour led me down the path of ASP.NET to master C#, coupled with an Ang
 
 ## Showcase
 
-<img src="https://github.com/dvdjms/Recipe-AI/assets/21125062/320b6972-7b72-4df9-b051-a03177d02f30" width="200">
+<img scr"https://github.com/dvdjms/Recipe-AI/issues/1#issue-1977783551" width="200">
+https://github.com/dvdjms/Recipe-AI/issues/1#issue-1977783551
+## Technologies
+<br>
 
-
-
+## Running a Recipe AI demonstration
