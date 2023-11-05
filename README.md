@@ -44,7 +44,7 @@ You will need a ChatGPT API key. This entails creating a user account and provid
 
 In route folder create a file named config.json and enter the following:
 
-```{ API_KEY" : "<Your API key to be added here> }```
+```{ API_KEY" : "<Your API key to be added here>" }```
 <br>
 
 Run locally
