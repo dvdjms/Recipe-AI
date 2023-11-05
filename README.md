@@ -25,6 +25,9 @@ This endeavour led me down the path of ASP.NET to master C#, coupled with an Ang
 
 ## Showcase
 
+https://github.com/dvdjms/Recipe-AI/issues/1#issue-1977783551
+
+
 <img scr"https://github.com/dvdjms/Recipe-AI/issues/1#issue-1977783551" width="200">
 https://github.com/dvdjms/Recipe-AI/issues/1#issue-1977783551
 ## Technologies
