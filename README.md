@@ -24,7 +24,7 @@ This endeavour led me down the path of ASP.NET to master C#, coupled with an Ang
 
 
 ## Showcase
-<img src="https://github.com/dvdjms/Recipe-AI/issues/1#issue-1977783551" width="200">
+<img src="https://github.com/dvdjms/Recipe-AI/issues/1#issue-1977783551.mp4" width="200">
 
 
 
