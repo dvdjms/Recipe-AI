@@ -17,10 +17,12 @@ A full-stack ASP.net app with Angular frontend that allows users to select food 
 
 ## Idea
 
-Intrigued by the rapid evolution of Artificial Intelligence, I couldn't resist the urge to dive into the ChatGPT API. To channel my focus, I embarked on an exciting experiment: building a recipe generator. 
+Intrigued by the rapid evolution of Artificial Intelligence, I couldn't resist the urge to dive into the ChatGPT API. To channel my focus, I embarked on an exciting experiment: building a recipe generator.
 
 Committed to continuously expanding my knowledge in emerging technologies, I've embraced a proactive approach: learning by doing.
 This endeavour led me down the path of ASP.NET to master C#, coupled with an Angular frontend. All new to me!
+
+This is a practise project and not intended for production.
 
 
 ## Showcase
@@ -49,7 +51,7 @@ In route folder create a file named config.json and enter the following:
 
 Run locally
 
-Clone the project and go to the porject directory
+Clone the project and go to the project base directory
 
 ```cd RecipeRevel```
 
@@ -59,4 +61,4 @@ Run ASP.NET Core (this will automatically run Angular client side)
 
 ```dotnet run```
 
-The application is runnning on port 44417 so go to http://localhost:3000/ to try it out.
+The application is runnning on port 44417 so go to http://localhost:44417/ to try it out.
